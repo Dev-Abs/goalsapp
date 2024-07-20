@@ -55,7 +55,7 @@ const App = () => {
     <Router>
       <Navbar navbarMain={navbarMain} toggleNavbar={toggleNavbar} />
       <Routes>
-        <Route path="/login" element={<Login toggleNavbar={toggleNavbar} />} />
+        <Route path="/" element={<Login toggleNavbar={toggleNavbar} />} />
 
         <Route path="/signup" element={<Signup />} />
         <Route
