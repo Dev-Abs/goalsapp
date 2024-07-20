@@ -8,7 +8,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/users`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -10,7 +10,7 @@ const AllGoals = (props) => {
     }
     const getGoals = async () => {
     let token = localStorage.getItem('token')
-    const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/goals`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/goals`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

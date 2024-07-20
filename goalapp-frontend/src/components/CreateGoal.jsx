@@ -18,7 +18,7 @@ const CreateGoal = (props) => {
       return;
     }
 
-    const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/goals`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/goals`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

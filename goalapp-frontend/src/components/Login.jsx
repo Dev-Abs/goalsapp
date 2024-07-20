@@ -7,7 +7,7 @@ const Login = (props) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/users/login`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

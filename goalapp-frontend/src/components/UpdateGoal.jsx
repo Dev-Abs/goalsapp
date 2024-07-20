@@ -17,7 +17,7 @@ const UpdateGoal = (props) => {
 
       // update goal
 
-      const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/goals/${props.id}`,{
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/goals/${props.id}`,{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
