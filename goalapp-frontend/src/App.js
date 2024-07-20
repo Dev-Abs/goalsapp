@@ -12,7 +12,6 @@ const App = () => {
   const [goals, setGoals] = useState([]);
   const [id, setID] = useState('')
   const [navbarMain, setNavbarMain ] = useState(false)
-
   const [updatedGoal, setUpdatedGoal] = useState({
     id: null,
     title: "",
