@@ -11,7 +11,7 @@ const Goal = (props) => {
       navigate('/')
     }
 
-    const response = await fetch (`http://localhost:5000/api/goals/${props.goal._id}`, {
+    const response = await fetch (`${import.meta.env.REACT_APP_BASE_URL}/api/goals/${props.goal._id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
