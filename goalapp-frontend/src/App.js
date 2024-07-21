@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
@@ -12,6 +12,7 @@ const App = () => {
   const [token, setToken] = useState("");
   useEffect(() => {
     setToken(localStorage.getItem("token"));
+    console.log('token:',token);
   });
   const [goals, setGoals] = useState([]);
   const [id, setID] = useState('')
