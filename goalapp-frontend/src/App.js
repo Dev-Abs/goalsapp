@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
@@ -50,6 +50,8 @@ const App = () => {
   const toggleNavbar = () =>{
     setNavbarMain(!navbarMain)
   }
+
+  navbarMain = useMemo(() => toggleNavbar(), [navbarMain])
   return (
     <Router>
       <Navbar navbarMain={navbarMain} toggleNavbar={toggleNavbar} />
