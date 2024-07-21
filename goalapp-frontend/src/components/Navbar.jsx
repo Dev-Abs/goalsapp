@@ -30,7 +30,7 @@ const Navbar = (props) => {
             ></path>
           </svg>
         </div>
-        {props.navbarMain ? (
+        {!token ? (
           <div className="pr-8 md:block hidden">
             {/* <a href="/" className="p-4">Home</a> */}
             <Link to="/allgoals" className="p-4">
