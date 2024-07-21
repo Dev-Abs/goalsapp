@@ -29,7 +29,7 @@ const Goal = (props) => {
   return (
     <>
       {/* display goals in one card */}
-      <div className="flex justify-center items-center  p-6 mt-[-45px] w-4/5">
+      <div className="flex justify-center items-center h-[100px] w-4/5 md:p-6">
         <div className="my-[20px] w-full">
           <h2 className="text-300 font-bold mb-2 text-gray-800 md:text-xl">
             {props.goal.text}
