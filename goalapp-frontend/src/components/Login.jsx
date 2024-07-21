@@ -23,6 +23,9 @@ const Login = (props) => {
       props.toggleNavbar()
       navigate("/creategoal");
     }
+    else{
+      alert('invalid email or password')
+    }
   };
   return (
     <>

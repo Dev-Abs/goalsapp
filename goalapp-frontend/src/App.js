@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import usePersistState from "./states/usePersistState";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -11,12 +12,16 @@ import Home from "./components/Home";
 const App = () => {
   const [goals, setGoals] = useState([]);
   const [id, setID] = useState('')
-  const [navbarMain, setNavbarMain ] = useState(false)
+  const [navbarMain, setNavbarMain ] = usePersistState(false, 'navbar')
   const [updatedGoal, setUpdatedGoal] = useState({
     id: null,
     title: "",
     description: "",
   });
+
+  useEffect( () =>{
+    localStorage.setItem('navbar',navbarMain)
+  })
 
   const addGoal = (goal) => {
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -48,7 +53,7 @@ const App = () => {
     
   };
   const toggleNavbar = () =>{
-    setNavbarMain(!navbarMain)
+    setNavbarMain(!navbarMain, 'navbar')
   }
   return (
     <Router>
