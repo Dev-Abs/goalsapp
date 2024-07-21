@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
@@ -9,6 +9,10 @@ import UpdateGoal from "./components/UpdateGoal";
 import Home from "./components/Home";
 
 const App = () => {
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+  });
   const [goals, setGoals] = useState([]);
   const [id, setID] = useState('')
   const [navbarMain, setNavbarMain ] = useState(false)
@@ -48,10 +52,12 @@ const App = () => {
     
   };
   const toggleNavbar = () =>{
-    setNavbarMain(!navbarMain)
+    if(!token){
+    setNavbarMain(false)
+    } else {
+      setNavbarMain(true)
+    }
   }
-
-  navbarMain = useMemo(() => toggleNavbar(), [navbarMain])
   return (
     <Router>
       <Navbar navbarMain={navbarMain} toggleNavbar={toggleNavbar} />
